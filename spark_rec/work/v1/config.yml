@@ -1,0 +1,13 @@
+# recommendation config
+
+recommend:
+  als:
+    userCol: "userId"
+    itemCol: "movieId"
+    ratingCol: "rating"
+  jaccard:
+    userCol: "userId"
+    itemCol: "movieId"
+
+data:
+  path: "../ml-latest-small/ratings.csv"
