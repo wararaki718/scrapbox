@@ -1,0 +1,7 @@
+version: '3'
+services:
+  sample:
+    build: ./app
+    image: 'sample-override'
+    environment:
+      - MSG=hello
