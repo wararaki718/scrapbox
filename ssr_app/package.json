@@ -1,0 +1,13 @@
+{
+    "name": "simple-app",
+    "scripts": {
+        "dev": "nuxt"
+    },
+    "dependencies": {
+        "babel": "^6.23.0",
+        "nuxt": "^2.1.0"
+    },
+    "devDependencies": {
+        "@babel/parser": "^7.1.2"
+    }
+}
