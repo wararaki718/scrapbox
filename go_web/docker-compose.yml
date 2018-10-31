@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    build: .
+    image: sample-go
+    ports:
+      - "1323:1323"
+    environment:
+      - "GOPATH=/go"
