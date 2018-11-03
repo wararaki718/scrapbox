@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample
+spec:
+  containers:
+  - name: go-web
+    image: localhost:5000/go-web/sample-go:latest
+    imagePullPolicy: IfNotPresent
