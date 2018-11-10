@@ -30,4 +30,6 @@ func main() {
 		rows.Scan(&sample.id, &sample.name)
 		fmt.Print(sample)
 	}
+
+	defer db.Close()
 }
