@@ -1,0 +1,29 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:9.6
+    container_name: "postgres_db"
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+    tty: true
+    restart: always
+    user: root
+    volumes:
+      - ./initdb:/docker-entrypoint-initdb.d
+      - pgdata:/var/lib/postgresql/data
+
+  web:
+    build: .
+    image: sample-go-db
+    ports:
+      - "1323:1323"
+    environment:
+      - "GOPATH=/go"
+    depends_on:
+      - postgres
+
+volumes:
+  pgdata:
