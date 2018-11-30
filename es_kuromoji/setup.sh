@@ -1,4 +1,9 @@
 #!/bin/bash
-docker run -t kamen -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node"
-curl -s -XPUT localhost:9200/kamen -d @index.json
-curl -XPOST -s -H "Content-Type: application/x-ndjson" localhost:9200/_bulk -d @data.ndjson
+echo "set index"
+curl -H "Content-Type: application/json" -XPUT localhost:9200/kamen -d '@jsons/index.json'
+python bulk.py
+
+echo "check"
+curl -XGET localhost:9200/_cat/plugins
+curl -XGET localhost:9200/kamen"?pretty"
+echo "setup done"

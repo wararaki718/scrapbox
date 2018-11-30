@@ -1,0 +1,15 @@
+{
+    "query": {
+        "match_phrase":{
+            "description": "悪"
+        }
+    },
+    "aggs": {
+        "rider_aggs": {
+            "significant_terms": {
+                "field": "description"
+            }
+        }
+    },
+    "size": 0
+}

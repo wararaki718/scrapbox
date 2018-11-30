@@ -1,0 +1,8 @@
+version: "3"
+services:
+  es:
+    build: .
+    image: es-kuromoji:1.0
+    ports:
+      - 9200:9200
+      

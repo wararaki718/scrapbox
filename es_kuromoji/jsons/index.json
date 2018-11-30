@@ -3,8 +3,7 @@
         "rider": {
             "properties": {
                 "title": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "text"
                 },
                 "start_date": {
                     "type": "date"
@@ -15,7 +14,7 @@
                 "description": {
                     "type": "text",
                     "fielddata": true,
-                    "analyzer": "my_kuromoji_analyzer"
+                    "analyzer": "kuromoji_analyzer"
                 }
             }
         }
