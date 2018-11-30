@@ -1,0 +1,33 @@
+{
+    "mappings": {
+        "rider": {
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "start_date": {
+                    "type": "date"
+                },
+                "end_date": {
+                    "type": "date"
+                },
+                "description": {
+                    "type": "text",
+                    "fielddata": true,
+                    "analyzer": "my_kuromoji_analyzer"
+                }
+            }
+        }
+    },
+    "settings": {
+        "analysis": {
+            "analyzer": {
+                "kuromoji_analyzer": {
+                    "type": "custom",
+                    "tokenizer": "kuromoji_tokenizer"
+                }
+            }
+        }
+    }
+}
