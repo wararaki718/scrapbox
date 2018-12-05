@@ -2,7 +2,7 @@ version: '3'
 services:
   web:
     build: .
-    image: sample-flask
+    image: sample-web
     ports:
       - 5000:5000
     depends_on:
