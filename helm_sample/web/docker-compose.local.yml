@@ -2,12 +2,12 @@ version: '3'
 services:
   web:
     build: .
-    image: localhost:5000/sample-web
+    image: sample-web
     ports:
-      - "80:80"
+      - 5555:5555
     depends_on:
       - redis
-    labels:
-      kompose.service.type: NodePort
   redis:
     image: redis:5.0.2
+    ports:
+      - 6379:6379
