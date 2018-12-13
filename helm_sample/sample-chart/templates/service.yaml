@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "sample-chart.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "sample-chart.name" . }}
+    helm.sh/chart: {{ include "sample-chart.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+  selector:
+    app.kubernetes.io/name: {{ include "sample-chart.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
