@@ -1,7 +1,12 @@
 version: "3"
 services:
-  web:
-    build: .
-    image: sample-cors
+  cors:
+    build: ./cors
+    image: sample-allow-cors
     ports:
       - "5555:5555"
+  no_cors:
+    build: ./no_cors
+    image: sample-prohibit-cors
+    ports:
+      - "5556:5556"

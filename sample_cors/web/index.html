@@ -3,12 +3,25 @@
         <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
         <script>
             $(function(){
-                $('#ajax').click(function(){
+                $('#allow').click(function(){
                     $.ajax({
                         url: 'http://0.0.0.0:5555/msg',
                         type: 'GET',
                     }).done(function(data){
                         $('#result').html(data)
+                    }).fail(function(data){
+                        $('#result').html(data.statusText)
+                    })
+                })
+
+                $('#prohibit').click(function(){
+                    $.ajax({
+                        url: 'http://0.0.0.0:5556/msg',
+                        type: 'GET',
+                    }).done(function(data){
+                        $('#result').html(data)
+                    }).fail(function(data){
+                        $('#result').html(data.statusText)
                     })
                 })
             })
@@ -16,10 +29,19 @@
     </head>
     <body>
         <div>
-            <button id='ajax'>
-                start
+            <button id='allow'>
+                allow
             </button>
         </div>
+        <div>
+            <button id='prohibit'>
+                prohibit
+            </button>
+        </div>
+        <div>
+            result
+        </div>
+        <br/>
         <div>
             <div id='result'></div>
         </div>
