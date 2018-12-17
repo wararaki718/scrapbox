@@ -1,0 +1,7 @@
+version: "3"
+services:
+  web:
+    build: .
+    image: sample-cors
+    ports:
+      - "5555:5555"
