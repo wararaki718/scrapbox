@@ -1,0 +1,7 @@
+version: "3"
+services:
+  nginx:
+    build: nginx
+    image: html-nginx
+    ports: 
+      - 80:80
