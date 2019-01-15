@@ -1,7 +1,8 @@
 #!/bin/bash
 echo "set index"
 curl -H "Content-Type: application/json" -XPUT localhost:9200/kamen -d '@jsons/index.json'
-python bulk.py
+# python bulk.py
+sh bulk.sh
 
 echo "check"
 curl -XGET localhost:9200/_cat/plugins
