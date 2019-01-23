@@ -6,5 +6,8 @@ setup(
     packages=['hello'],
     package_data={
         'hello': ['base.ipynb']
-    }
+    },
+    install_requires=[
+        'papermill'
+    ]
 )
