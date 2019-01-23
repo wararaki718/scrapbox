@@ -1,5 +1,4 @@
 import os
-from site import getsitepackages
 
 import papermill as pm
 
