@@ -3,9 +3,7 @@ get tweet sample
 '''
 import sys
 
-import requests
 import requests_oauthlib
-
 import yaml
 
 
