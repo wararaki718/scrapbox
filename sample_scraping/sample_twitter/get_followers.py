@@ -1,5 +1,5 @@
 '''
-get tweet sample
+get follower
 '''
 import json
 import sys
@@ -12,6 +12,7 @@ def load_yaml(filepath):
     with open(filepath) as f:
         data = yaml.load(f)
     return data
+
 
 def get_user_info(twitter, user_id):
     url = 'https://api.twitter.com/1.1/users/show.json'
