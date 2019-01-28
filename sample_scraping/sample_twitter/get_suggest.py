@@ -54,6 +54,7 @@ def main():
     # show suggest users
     print('show suggest users')
     for suggestion in suggestions[:5]:
+        print(f'suggest: {suggestion}')
         slug = suggestion.get('slug')
 
         # show suggest users
