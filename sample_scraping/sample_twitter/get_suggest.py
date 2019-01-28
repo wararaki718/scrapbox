@@ -1,6 +1,7 @@
 '''
 get suggest sample
 '''
+import json
 import sys
 
 import requests_oauthlib
@@ -13,17 +14,29 @@ def load_yaml(filepath):
     return data
 
 
+def show_user(user):
+    print(f'name       : {user.get("name")}')
+    print(f'screen_name: {user.get("screen_name")}')
+    print(f'followers  : {user.get("followers_count")}')
+    print(f'following  : {user.get("friends_count")}')
+    print('')
+
+
 def show_users(users):
     for user in users[:2]:
-        print(f'name       : {user.get("name")}')
-        print(f'screen_name: {user.get("screen_name")}')
-        print(f'followers  : {user.get("followers_count")}')
-        print(f'following  : {user.get("friends_count")}')
-        print('')
+        show_user(user)
 
 
-def show_tweet(tweet):
-    print(tweet)
+def show_tweet(status):
+    print(f'create_date: {status.get("created_at")}')
+    print(f'tweet      : {status.get("text")}')
+    print("")
+
+
+def show_info(user_objs):
+    for user_obj in user_objs:
+        show_user(user_obj)
+        show_tweet(user_obj.get('status'))
 
 
 def main():
@@ -58,7 +71,8 @@ def main():
         url = f'https://api.twitter.com/1.1/users/suggestions/{slug}/members.json'
         response = twitter.get(url)
         data = response.json()
-        show_tweet(data.get('status'))
+        show_info(data)
+    print("DONE")
 
     return 0
 
