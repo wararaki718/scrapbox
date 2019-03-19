@@ -1,0 +1,10 @@
+version: "3"
+services:
+  base:
+    build: ./base
+    image: ignore-base:1.0.0
+  app:
+    build: ./app
+    image: ignore-app:1.0.0
+    depends_on:
+      - base
