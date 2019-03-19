@@ -1,0 +1,22 @@
+version: '3'
+services:
+  flask_web1:
+    build: app
+    image: flask-web1
+    networks:
+      - flask_net
+    ports:
+      - "5555:5555"
+  flask_web2:
+    build: app2
+    image: flask-web2
+    networks:
+      - flask_net
+    ports:
+      - "5556:5556"
+    depends_on:
+      - flask_web1
+
+networks:
+  flask_net:
+    external: true
