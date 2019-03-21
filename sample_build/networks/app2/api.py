@@ -11,7 +11,8 @@ def world():
 
 @app.route("/via")
 def hello():
-    response = requests.get('http://flask_net:5555')
+    # response = requests.get('http://flask_net:5555')
+    response = requests.get('http://flask_web1:5555')
     return f'flask_web2 & {response.text}'
 
 
