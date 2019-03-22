@@ -1,0 +1,9 @@
+version: "3"
+services:
+  with_blas:
+    build: ./with_blas
+    image: with-blas
+  without_blas:
+    build: ./without_blas
+    image: without-blas
+  
