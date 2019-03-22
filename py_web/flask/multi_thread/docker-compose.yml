@@ -1,0 +1,12 @@
+version: "3"
+services:
+  single:
+    build: ./single
+    image: single-flask:1.0
+    ports:
+      - 5555:5555
+  multi:
+    build: ./multi
+    image: multi-flask:1.0
+    ports:
+      - 5556:5556
