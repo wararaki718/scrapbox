@@ -1,0 +1,7 @@
+version: "3"
+services:
+  es_ltr:
+    build: .
+    image: es-ltr:1.0
+    ports:
+      - "9200:9200"
