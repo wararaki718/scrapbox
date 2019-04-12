@@ -1,0 +1,5 @@
+version: "3"
+services:
+  py_mecab:
+    build: .
+    image: sample-py-mecab:1.0
