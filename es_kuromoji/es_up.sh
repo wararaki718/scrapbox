@@ -16,6 +16,7 @@ if [ ! -d 'elasticsearch-6.7.1' ]; then
     wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.7.1.tar.gz
     tar xvzf elasticsearch-6.7.1.tar.gz
     rm elasticsearch-6.7.1.tar.gz
+    pip install elasitcsearch==6.3.1
 
     ### setup plugins
     ./elasticsearch-6.7.1/bin/elasticsearch-plugin install analysis-kuromoji
