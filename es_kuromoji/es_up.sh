@@ -18,6 +18,7 @@ if [ ! -d 'elasticsearch-6.7.1' ]; then
     pip install elasitcsearch
 
     ### setup plugins
+    export JAVA_HOME=/usr/lib/jvm/java-8-oracle
     ./elasticsearch-6.7.1/bin/elasticsearch-plugin install analysis-kuromoji
     echo "[DONE] elasticsearch setup"
 fi
