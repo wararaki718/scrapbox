@@ -29,3 +29,20 @@ $ docker-compose up
 ```
 $ curl localhost:8000
 ```
+
+## k8s deploy & run
+
+### kubectl deploy
+```
+$ kubectl apply -f kube.yml
+```
+
+### set loadbalancer
+```
+$ kubectl expose deployment fastapi --type=LoadBalancer --name=my-service
+```
+
+### check api (via loadbalancer)
+```
+$ curl localhost:8000
+```
