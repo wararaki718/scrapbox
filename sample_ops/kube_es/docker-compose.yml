@@ -1,0 +1,7 @@
+version: "3"
+services:
+  es_ltr:
+    build: ./app
+    image: wararaki/es-kuromoji-ltr:1.0
+    ports:
+      - "9200:9200"
