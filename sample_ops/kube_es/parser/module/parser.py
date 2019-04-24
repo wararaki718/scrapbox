@@ -5,6 +5,8 @@ from bs4 import BeautifulSoup
 import pandas as pd
 from tqdm import tqdm
 
+from paperbook import PaperBook
+
 class AozoraParser:
     def __init__(self):
         pass
@@ -26,12 +28,12 @@ class AozoraParser:
         return text
 
 
-    def parse(self, file_obj: str, encode_type: str=None) -> str:
+    def parse(self, file_obj: str, encode_type: str=None) -> PaperBook:
         '''
         file_obj: file object
         '''
         soup = BeautifulSoup(file_obj, fromEncoding=encode_type)
         text = self.__get_text(soup)
         text = self.__cleaning(text)
-        return text
+        return PaperBook(body=text)
 
