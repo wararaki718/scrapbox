@@ -58,7 +58,7 @@ spec:
     spec:
       containers:
       - name: frontapi
-        image: wararaki/sample-fastapi2:1.0
+        image: wararaki/sample-fastapi2:1.1
         resources:
           limits:
             memory: "128Mi"
