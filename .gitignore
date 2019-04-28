@@ -31,3 +31,5 @@ project/plugins/project/
 
 .vscode
 a.out
+
+sample_ops/kube_es/data/*
