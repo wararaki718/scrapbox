@@ -10,5 +10,5 @@ def hello():
 
 @app.get("/hello")
 def hello2():
-    response = requests.get("http://app:8000/")
+    response = requests.get("http://backapi:8000/")
     return f'{response.text}, world!'

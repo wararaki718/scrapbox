@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backapi
+spec:
+  selector:
+    app: backapi
+  ports:
+  - port: 8000
+    targetPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontapi
+spec:
+  selector:
+    app: frontapi
+  ports:
+  - port: 8001
+    targetPort: 8001
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backapi
+spec:
+  selector:
+    matchLabels:
+      app: backapi
+  template:
+    metadata:
+      labels:
+        app: backapi
+    spec:
+      containers:
+      - name: backapi
+        image: wararaki/sample-fastapi:2.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontapi
+spec:
+  selector:
+    matchLabels:
+      app: frontapi
+  template:
+    metadata:
+      labels:
+        app: frontapi
+    spec:
+      containers:
+      - name: frontapi
+        image: wararaki/sample-fastapi2:1.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8001

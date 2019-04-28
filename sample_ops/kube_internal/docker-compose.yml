@@ -1,15 +1,15 @@
 version: "3"
 services:
-  app:
-    build: ./app
+  backapi:
+    build: ./backapi
     image: wararaki/sample-fastapi:2.0
     ports:
       - "8000:8000"
     networks: 
       - fast_net
-  app2:
-    build: ./app2
-    image: wararaki/sample-fastapi2:1.0
+  frontapi:
+    build: ./frontapi
+    image: wararaki/sample-fastapi2:1.1
     ports:
       - "8001:8001"
     networks: 
