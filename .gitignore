@@ -33,3 +33,4 @@ project/plugins/project/
 a.out
 
 sample_ops/kube_es/data/*
+node_modules
