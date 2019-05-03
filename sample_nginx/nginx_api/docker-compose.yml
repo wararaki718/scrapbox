@@ -1,0 +1,18 @@
+version: "3"
+services: 
+  lb:
+    build: ./lb
+    image: sample-nginx:1.0
+    ports:
+      - "8080:8080"
+    networks: 
+      - lbnet
+  webapi:
+    image: wararaki/sample-fastapi:2.0
+    ports:
+      - "8000:8000"
+    networks: 
+      - lbnet
+networks: 
+  lbnet:
+    external: true
