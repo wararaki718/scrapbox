@@ -1,11 +1,15 @@
-import React from 'react'
+import Link from 'next/link';
 
-class Index extends React.Component {
-    render() {
-        return (
-            <div>Hello, World!</div>
-        );
-    }
+function Home() {
+    return (
+        <div>
+            Click{' '}
+            <Link href='/about'>
+                <a>here</a>
+            </Link>{' '}
+            to read more
+        </div>
+    );
 }
 
-export default Index;
+export default Home;
