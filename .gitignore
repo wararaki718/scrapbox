@@ -34,3 +34,4 @@ a.out
 
 sample_ops/kube_es/data/*
 node_modules
+sample_ml/tfidf_lda/data/*
