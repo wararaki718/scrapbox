@@ -1,5 +1,11 @@
 version: "3"
 services:
-  withblas:
-    build: ./with_blas
-    image: with-blas:1.0
+  py37:
+    build: ./py37
+    image: py37:1.0
+  mini46:
+    build: ./mini46
+    image: mini46:1.0
+  ana2019:
+    build: ./ana2019
+    image: ana2019:1.0

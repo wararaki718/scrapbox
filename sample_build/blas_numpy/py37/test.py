@@ -5,7 +5,7 @@ import scipy
 
 
 def main():
-    print('numpy config:')
+    print('numpy config (python 3.7 image):')
     print(numpy.__version__)
     print(numpy.show_config())
     print('')
