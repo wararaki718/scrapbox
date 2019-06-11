@@ -1,0 +1,5 @@
+version: "3"
+services:
+  withblas:
+    build: ./with_blas
+    image: with-blas:1.0
