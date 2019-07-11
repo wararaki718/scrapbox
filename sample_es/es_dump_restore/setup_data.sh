@@ -20,6 +20,7 @@ curl -X PUT "localhost:9200/shakespeare?pretty" -H 'Content-Type: application/js
 
 # load the dataset
 curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/shakespeare/doc/_bulk?pretty' --data-binary @shakespeare_6.0.json
+curl -XGET "localhost:9200/_cat/indices?v&pretty"
 
 # delete the dataset
 rm shakespeare_6.0.json
