@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-sidecar
+  labels:
+    name: pod-with-sidecar
+spec:
+  volumes:
+    - name: shared-logs
+      emptyDir: {}
+  containers:
+  - name: app-container
+    image: ubuntu:16.04
+    command: ["/bin/sh"]
+    args: [
+      "-c",
+      "while true; do date >> /var/log/app.txt; sleep 5;done"
+    ]
+    volumeMounts:
+      - name: shared-logs
+        mountPath: /var/log
+    resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+  - name: sidecar-container
+    image: nginx:1.7.9
+    ports:
+      - containerPort: 80
+    volumeMounts:
+      - name: shared-logs
+        mountPath: /usr/share/nginx/html
+    resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
